@@ -1,0 +1,13 @@
+{
+  "firstName": "Bumi",
+  "lastName": "Test",
+  "email": "mjuanda@gmail.com",
+  "username": "mjuanda",
+  "bio": "Test Bio",
+  "phone": "123456789",
+  "website": "https://example.com",
+  "location": "Jakarta",
+  "university": "UI",
+  "department": "CS",
+  "position": "Lecturer"
+}

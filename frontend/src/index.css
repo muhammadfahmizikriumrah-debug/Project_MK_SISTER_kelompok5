@@ -1,0 +1,286 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica Neue', sans-serif;
+  }
+
+  body {
+    @apply bg-white dark:bg-gh-bg text-gray-900 dark:text-gh-text transition-colors duration-200;
+  }
+
+  /* Ensure all text elements are readable in dark mode */
+  h1, h2, h3, h4, h5, h6 {
+    @apply dark:text-gh-text;
+  }
+
+  p, span, label, li, a {
+    @apply dark:text-gh-text;
+  }
+
+  /* Override gray text to be lighter in dark mode */
+  .text-gray-600 {
+    @apply dark:text-gh-text-secondary;
+  }
+
+  .text-gray-700 {
+    @apply dark:text-gh-text;
+  }
+
+  .text-gray-500 {
+    @apply dark:text-gh-text-tertiary;
+  }
+
+  .text-gray-400 {
+    @apply dark:text-gh-text-secondary;
+  }
+
+  .text-gray-300 {
+    @apply dark:text-gh-text-secondary;
+  }
+
+  .text-gray-900 {
+    @apply dark:text-gh-text;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-colors duration-200;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 dark:bg-gh-accent text-white hover:bg-primary-700 dark:hover:bg-gh-accent-hover;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-200 dark:bg-gh-bg-tertiary text-gray-900 dark:text-gh-text hover:bg-gray-300 dark:hover:bg-gh-border;
+  }
+  
+  .btn-outline {
+    @apply border border-gray-300 dark:border-gh-border text-gray-700 dark:text-gh-text hover:bg-gray-50 dark:hover:bg-gh-bg-secondary;
+  }
+  
+  .input {
+    @apply w-full px-3 py-2 border border-gray-300 dark:border-gh-border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gh-bg-secondary text-gray-900 dark:text-gh-text placeholder-gray-500 dark:placeholder-gh-text-tertiary;
+  }
+  
+  .card {
+    @apply bg-[#e8f2ff] dark:bg-gh-bg-secondary rounded-lg shadow-sm border border-gray-200 dark:border-gh-border;
+    backdrop-filter: blur(4px);
+  }
+
+  .section-divider {
+    @apply border-b border-gray-200 dark:border-gh-border;
+  }
+
+  .navbar-batik {
+    background:
+      radial-gradient(circle at 20% 0%, rgba(59, 130, 246, 0.22) 0, rgba(59, 130, 246, 0) 45%),
+      radial-gradient(circle at 80% -10%, rgba(14, 165, 233, 0.18) 0, rgba(14, 165, 233, 0) 40%),
+      linear-gradient(180deg, #0f1f3d 0%, #152a56 55%, #1b3470 100%);
+    color: #f8fafc;
+  }
+}
+
+.hero-batik {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: linear-gradient(135deg, #123c7c 0%, #0a1f45 55%, #152958 100%);
+  color: #f8fafc;
+}
+
+.hero-batik::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 8% 12%, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.2) 6%, transparent 7%),
+    radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.16) 0, rgba(255, 255, 255, 0.16) 5%, transparent 6%),
+    radial-gradient(circle at 55% 25%, rgba(255, 255, 255, 0.14) 0, rgba(255, 255, 255, 0.14) 4%, transparent 5%),
+    radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.18) 0, rgba(255, 255, 255, 0.18) 4.5%, transparent 6%),
+    radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.14) 0, rgba(255, 255, 255, 0.14) 5%, transparent 6.5%);
+  background-size: 160px 160px;
+  mix-blend-mode: screen;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.hero-batik::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(12, 38, 84, 0.85), rgba(11, 28, 62, 0.9));
+  pointer-events: none;
+}
+
+.hero-batik > * {
+  position: relative;
+  z-index: 1;
+}
+
+.dark .hero-batik {
+  background: linear-gradient(135deg, #0a1d33 0%, #071429 55%, #091b34 100%);
+}
+
+.dark .hero-batik::before {
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(88, 166, 255, 0.42) 0, rgba(88, 166, 255, 0.42) 5.5%, transparent 7.5%),
+    radial-gradient(circle at 28% 62%, rgba(88, 166, 255, 0.32) 0, rgba(88, 166, 255, 0.32) 4.5%, transparent 6.5%),
+    radial-gradient(circle at 52% 28%, rgba(88, 166, 255, 0.36) 0, rgba(88, 166, 255, 0.36) 3.5%, transparent 5.5%),
+    radial-gradient(circle at 72% 35%, rgba(88, 166, 255, 0.4) 0, rgba(88, 166, 255, 0.4) 4%, transparent 6.5%),
+    radial-gradient(circle at 88% 82%, rgba(88, 166, 255, 0.3) 0, rgba(88, 166, 255, 0.3) 4.5%, transparent 6.5%);
+}
+
+.dark .hero-batik::after {
+  background: linear-gradient(135deg, rgba(4, 12, 24, 0.94), rgba(6, 14, 32, 0.92));
+}
+
+
+.dashboard-batik {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(59, 130, 246, 0.14) 0, rgba(59, 130, 246, 0) 60%),
+    radial-gradient(circle at 82% 25%, rgba(79, 70, 229, 0.12) 0, rgba(79, 70, 229, 0) 55%),
+    radial-gradient(circle at 48% 78%, rgba(14, 165, 233, 0.12) 0, rgba(14, 165, 233, 0) 52%),
+    linear-gradient(180deg, #f5faff 0%, #e8f1ff 55%, #e2edff 100%);
+  padding-bottom: 4rem;
+}
+
+.dashboard-batik::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 18% 65%, rgba(59, 130, 246, 0.14) 0, rgba(59, 130, 246, 0.14) 18%, transparent 34%),
+    radial-gradient(circle at 72% 18%, rgba(129, 140, 248, 0.12) 0, rgba(129, 140, 248, 0.12) 19%, transparent 35%),
+    radial-gradient(circle at 52% 90%, rgba(14, 165, 233, 0.1) 0, rgba(14, 165, 233, 0.1) 21%, transparent 36%),
+    repeating-conic-gradient(from 45deg, rgba(59, 130, 246, 0.05) 0deg 15deg, transparent 15deg 30deg);
+  mix-blend-mode: soft-light;
+  opacity: 0.96;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.dashboard-batik::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 50% -10%, rgba(255, 255, 255, 0.65) 0, rgba(255, 255, 255, 0) 45%);
+  mix-blend-mode: screen;
+  opacity: 0.75;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.dashboard-batik > * {
+  position: relative;
+  z-index: 1;
+}
+
+.dark .dashboard-batik {
+  background: radial-gradient(circle at 20% 20%, rgba(88, 166, 255, 0.1) 0, rgba(88, 166, 255, 0.0) 55%),
+    radial-gradient(circle at 85% 30%, rgba(96, 165, 250, 0.12) 0, rgba(96, 165, 250, 0.0) 50%),
+    linear-gradient(180deg, #0f172a 0%, #111827 100%);
+}
+
+.dark .dashboard-batik::before {
+  background-image:
+    radial-gradient(circle at 18% 65%, rgba(59, 130, 246, 0.16) 0, rgba(59, 130, 246, 0.16) 17%, transparent 32%),
+    radial-gradient(circle at 70% 18%, rgba(129, 140, 248, 0.14) 0, rgba(129, 140, 248, 0.14) 19%, transparent 34%),
+    radial-gradient(circle at 52% 90%, rgba(14, 165, 233, 0.12) 0, rgba(14, 165, 233, 0.12) 20%, transparent 36%);
+}
+
+.dark .dashboard-batik::after {
+  background: radial-gradient(circle at 50% -10%, rgba(24, 42, 70, 0.85) 0, rgba(24, 42, 70, 0) 45%);
+  opacity: 0.7;
+}
+
+.auth-batik {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  background:
+    radial-gradient(circle at 18% 20%, rgba(59, 130, 246, 0.16) 0, rgba(59, 130, 246, 0) 60%),
+    radial-gradient(circle at 80% 22%, rgba(129, 140, 248, 0.14) 0, rgba(129, 140, 248, 0) 56%),
+    radial-gradient(circle at 50% 82%, rgba(14, 165, 233, 0.12) 0, rgba(14, 165, 233, 0) 52%),
+    linear-gradient(140deg, #fdfdff 0%, #eef4ff 45%, #e6f1ff 100%);
+  overflow: hidden;
+}
+
+.auth-batik::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 12% 78%, rgba(37, 99, 235, 0.14) 0, rgba(37, 99, 235, 0.14) 18%, transparent 34%),
+    radial-gradient(circle at 78% 14%, rgba(79, 70, 229, 0.12) 0, rgba(79, 70, 229, 0.12) 17%, transparent 33%),
+    radial-gradient(circle at 55% 60%, rgba(14, 165, 233, 0.1) 0, rgba(14, 165, 233, 0.1) 20%, transparent 36%);
+  mix-blend-mode: soft-light;
+  opacity: 0.98;
+  pointer-events: none;
+}
+
+.auth-batik::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% -20%, rgba(255, 255, 255, 0.75) 0, rgba(255, 255, 255, 0) 45%);
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.auth-batik > * {
+  position: relative;
+  z-index: 1;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 430px;
+  background: rgba(226, 238, 255, 0.92);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 20px 40px -25px rgba(30, 64, 175, 0.4);
+  border-radius: 24px;
+  padding: 2.5rem 2.25rem;
+  backdrop-filter: blur(12px);
+}
+
+.auth-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  pointer-events: none;
+}
+
+.auth-card h2 {
+  letter-spacing: -0.02em;
+}
+
+.dark .auth-batik {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(88, 166, 255, 0.12) 0, rgba(88, 166, 255, 0) 50%),
+    radial-gradient(circle at 80% 25%, rgba(56, 189, 248, 0.12) 0, rgba(56, 189, 248, 0) 45%),
+    linear-gradient(135deg, #0b162d 0%, #111a36 100%);
+}
+
+.dark .auth-batik::before {
+  background-image:
+    radial-gradient(circle at 12% 78%, rgba(88, 166, 255, 0.22) 0, rgba(88, 166, 255, 0.22) 13%, transparent 28%),
+    radial-gradient(circle at 78% 18%, rgba(56, 189, 248, 0.2) 0, rgba(56, 189, 248, 0.2) 15%, transparent 30%),
+    radial-gradient(circle at 60% 60%, rgba(129, 140, 248, 0.16) 0, rgba(129, 140, 248, 0.16) 14%, transparent 30%);
+}
+
+.dark .auth-card {
+  background: rgba(13, 23, 42, 0.9);
+  border-color: rgba(56, 189, 248, 0.25);
+  box-shadow: 0 20px 45px -30px rgba(37, 99, 235, 0.6);
+}

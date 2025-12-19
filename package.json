@@ -1,0 +1,26 @@
+{
+  "name": "taskthink-distributed-system",
+  "version": "1.0.0",
+  "description": "Distributed system for taskThink lecturer portfolio platform",
+  "scripts": {
+    "install-all": "npm run install-services && npm run install-frontend",
+    "install-services": "cd services/auth-service && npm install && cd ../user-service && npm install && cd ../profile-service && npm install && cd ../portfolio-service && npm install && cd ../media-service && npm install && cd ../search-service && npm install && cd ../worker-service && npm install",
+    "install-frontend": "cd frontend && npm install",
+    "dev": "docker-compose up -d postgres rabbitmq minio redis meilisearch",
+    "start": "docker-compose up -d",
+    "stop": "docker-compose down",
+    "logs": "docker-compose logs -f",
+    "clean": "docker-compose down -v && docker system prune -f"
+  },
+  "keywords": [
+    "microservices",
+    "distributed-system",
+    "portfolio",
+    "docker"
+  ],
+  "author": "Final Project Team",
+  "license": "MIT",
+  "devDependencies": {
+    "k6": "^0.0.0"
+  }
+}
