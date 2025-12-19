@@ -238,10 +238,10 @@ node tests/load/load_test_high.js  # 200 concurrent users
 
 **Final Project Team - SISTER Semester 5**
 
-- Fahmi Ahmad Nurhidayat - Lead Developer & Architecture
-- [Anggota 2] - Backend Developer
-- [Anggota 3] - Frontend Developer  
-- [Anggota 4] - DevOps & Testing
+- Muhammad Fahmi Zikri - 2301020097
+- Muhammad Ridho Faizal - 2301020124
+- Rizki Wardani - 2301020090
+- Muhammad Izzat Erlaulanda - 2301020094
 
 ## 📄 Lisensi
 
